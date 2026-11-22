@@ -47,12 +47,12 @@ Start only after the user confirmed.
 4. Keep the public behavior: every endpoint listed in Phase 1 keeps its method, path, and request and response format. If fixing a security finding requires changing a response (for example, no longer returning passwords), say so in the final summary.
 5. Keep the project runnable the same way: update the entry point, imports and dependency manifest so the original start command still works, or state the new command.
 6. Validate:
-   - Start the application and confirm that it boots without errors.
+   - Start the application and confirm that it boots without errors. If the default port is busy on this machine, start it on a free port through configuration for the validation. Do not change the project's default port because of that.
    - Call every endpoint from the Phase 1 inventory and confirm that it responds. Use a test or temporary database when a call would destroy data.
    - Search the code again for the anti-patterns that were reported and confirm that they are gone.
    - Stop the application when the validation ends.
 7. If something fails, fix it and validate again. Do not print the final summary while the application does not boot or an original endpoint does not respond.
-8. Print the Phase 3 summary:
+8. Print the Phase 3 summary below. Then save it, exactly as printed and with nothing else in the file, as `refactor-summary.md` in the same folder where the audit report was saved, overwriting the file if it exists, and print the path of the saved file.
 
 ```
 ================================
@@ -80,6 +80,6 @@ PHASE 3: REFACTORING COMPLETE
 - If a reference file named in a phase does not exist, stop and report which file is missing. Do not continue from general knowledge.
 - Use paths relative to the project root.
 - Stay inside the project directory. Do not touch files outside it, except the audit report file when the user gave a path outside it.
-- Never change `SKILL.md` or the files in `references/`. They are read-only. The audit report is the only file written inside the skill's folder.
+- Never change `SKILL.md` or the files in `references/`. They are read-only. The audit report and the refactor summary are the only files written inside the skill's folder.
 - Do not add features, endpoints or dependencies that the refactor does not need.
 - Keep secrets out of the code and out of the output. Move them to configuration read from the environment, with a `.env.example` listing the variable names.
