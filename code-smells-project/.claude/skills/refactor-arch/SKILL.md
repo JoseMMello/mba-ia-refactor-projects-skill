@@ -27,7 +27,7 @@ Do not change any file in this phase.
 4. Report only what is in the code. Never invent a finding to reach a number, and never report a pattern that the project does not have.
 5. Print the report in the format of `references/report-template.md`, with the findings ordered from CRITICAL to LOW.
 6. Report file: `$ARGUMENTS`
-   Save the report, exactly as printed and with nothing else in the file. This is the only file that may be written before the confirmation.
+   Save the report, exactly as printed and with nothing else in the file. In the file, put the report inside one fenced code block (a line with ```text before it and a line with ``` after it), so that Markdown viewers show it as printed instead of joining the lines. This is the only file that may be written before the confirmation.
    - If the line above has a file path, save to that path.
    - If it has no path, save to `report/audit-report.md` inside this skill's folder, next to `references/`, creating the `report/` folder if needed. Overwrite the file if it already exists.
    - Print the path of the saved file.
@@ -52,7 +52,7 @@ Start only after the user confirmed.
    - Search the code again for the anti-patterns that were reported and confirm that they are gone.
    - Stop the application when the validation ends.
 7. If something fails, fix it and validate again. Do not print the final summary while the application does not boot or an original endpoint does not respond.
-8. Print the Phase 3 summary below. Then save it, exactly as printed and with nothing else in the file, as `refactor-summary.md` in the same folder where the audit report was saved, overwriting the file if it exists, and print the path of the saved file.
+8. Print the Phase 3 summary below. Then save it, exactly as printed, inside one fenced code block like the audit report, and with nothing else in the file, as `refactor-summary.md` in the same folder where the audit report was saved, overwriting the file if it exists, and print the path of the saved file.
 
 ```
 ================================

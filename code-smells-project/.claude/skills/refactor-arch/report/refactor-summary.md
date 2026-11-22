@@ -1,3 +1,4 @@
+```text
 ================================
 PHASE 3: REFACTORING COMPLETE
 ================================
@@ -62,3 +63,4 @@ Removed: controllers.py, models.py (code moved to the packages above)
 - New 400 cases: invalid e-mail format on POST /usuarios; order items without an integer produto_id and a quantidade greater than zero.
 - PUT /produtos/<id>: now applies the same name length and category checks as POST /produtos.
 ================================
+```

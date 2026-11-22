@@ -1,3 +1,4 @@
+```text
 ================================
 ARCHITECTURE AUDIT REPORT
 ================================
@@ -320,3 +321,4 @@ Recommendation: Remove what stays unused and keep only what the refactored layer
 ================================
 Total: 51 findings
 ================================
+```

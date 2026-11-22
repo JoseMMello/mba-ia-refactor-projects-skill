@@ -1,3 +1,4 @@
+```text
 ================================
 PHASE 3: REFACTORING COMPLETE
 ================================
@@ -68,3 +69,4 @@ Removed: src/AppManager.js, src/utils.js
 - The financial report lists the courses in id order and the students in enrollment order. The original order depended on which query finished first. The response format is the same.
 - Unchanged: methods, paths, request fields, success bodies, and the plain-text error bodies with their original status codes and messages.
 ================================
+```

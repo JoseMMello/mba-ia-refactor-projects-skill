@@ -1,3 +1,4 @@
+```text
 ================================
 ARCHITECTURE AUDIT REPORT
 ================================
@@ -134,3 +135,4 @@ Recommendation: Remove the unused values and variables (T-16).
 ================================
 Total: 20 findings
 ================================
+```

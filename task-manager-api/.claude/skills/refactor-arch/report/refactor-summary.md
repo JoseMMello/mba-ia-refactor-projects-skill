@@ -1,3 +1,4 @@
+```text
 ================================
 PHASE 3: REFACTORING COMPLETE
 ================================
@@ -72,3 +73,4 @@ Resolved with a limit:
 - Requests that used to fail with 500 now answer 400: non-integer `priority` or `user_id` in `GET /tasks/search`; `priority`, `title`, `description`, `tags`, `user_id` or `category_id` of the wrong type in `POST /tasks` and `PUT /tasks/<id>`; a body that is not a JSON object on any write endpoint.
 - Stricter validation on values that were accepted before: `color` of a category must be `#RRGGBB`; `name` in `PUT /users/<id>` and in `PUT /categories/<id>` cannot be empty; `active` in `PUT /users/<id>` must be a boolean; `priority` must be an integer (a decimal such as 2.5 is refused).
 ================================
+```
