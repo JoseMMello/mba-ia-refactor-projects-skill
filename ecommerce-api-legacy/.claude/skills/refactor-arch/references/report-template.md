@@ -14,7 +14,7 @@ Files:   <n> analyzed | ~<n> lines of code
 
 ## Summary
 CRITICAL: <n> | HIGH: <n> | MEDIUM: <n> | LOW: <n>
-Deprecated APIs: <n found, or "none found">
+Deprecated APIs: <number of distinct deprecated APIs found, with their names, or "none found">
 
 ## Findings
 

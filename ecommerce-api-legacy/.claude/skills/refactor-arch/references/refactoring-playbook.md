@@ -87,7 +87,7 @@ Use a hashing library that the stack already provides (`werkzeug.security` with 
 
 ## T-04 Remove or protect dangerous endpoints (fixes AP-04)
 
-An endpoint that executes SQL or code from the request has no safe form: remove it and report the removal under "Behavior Changes". For destructive or administrative endpoints, require authorization and disable them outside development.
+An endpoint that executes SQL or code from the request has no safe form: remove it and report the removal under "Behavior Changes". For destructive or administrative endpoints, require authorization. Keep them available: the application may need them in production.
 
 Before:
 ```javascript
@@ -265,7 +265,7 @@ def list_products():
     return jsonify(product_model.find_all()), 200
 ```
 
-In Express, the equivalent is one `app.use((err, req, res, next) => ...)` registered after the routes, with handlers calling `next(err)`. Keep the error body keys that the original API used, so clients do not break.
+In Express, the equivalent is one `app.use((err, req, res, next) => ...)` registered after the routes, with handlers calling `next(err)`. Keep the error format that the original API used, so clients do not break: the same JSON keys, or plain text when the original answered plain text. Consistent means one place builds every error, not that the format changes.
 
 ## T-09 Join or batch query (fixes AP-09)
 
@@ -388,7 +388,7 @@ app.use(express.json());
 const token = Buffer.from(text).toString('base64');
 ```
 
-Remove a dependency from the manifest when its replacement is built in. Check that stored or returned date formats do not change.
+Remove a dependency from the manifest when its replacement is built in. Check that stored or returned date formats do not change: when the columns or the responses use naive datetimes, drop the timezone after reading the clock (`datetime.now(timezone.utc).replace(tzinfo=None)`) in one helper and use that helper everywhere.
 
 ## T-13 Transaction (fixes AP-13)
 

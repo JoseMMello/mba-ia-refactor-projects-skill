@@ -80,7 +80,7 @@ For other stacks, use the same layers with the idiomatic folder and file names o
 3. **Thin routes**: a route file only maps a path to a controller function.
 4. **Controllers do not query**: all data access goes through a model.
 5. **Models do not know HTTP**: no request or response objects inside models.
-6. **Central error handling**: one handler turns errors into a consistent JSON response. Controllers raise or forward errors instead of repeating `try/except` or `try/catch`. Internal details never go to the client.
+6. **Central error handling**: one handler turns errors into a consistent response, in the format the API already uses (JSON, or plain text when that is what the original returns). Controllers raise or forward errors instead of repeating `try/except` or `try/catch`. Internal details never go to the client.
 7. **Validation before use**: input is validated in the controller, or in a validator it calls, before reaching the model.
 8. **Sensitive fields never leave**: passwords, hashes, tokens and secrets are not serialized in responses.
 9. **Safe queries**: placeholders for every value.

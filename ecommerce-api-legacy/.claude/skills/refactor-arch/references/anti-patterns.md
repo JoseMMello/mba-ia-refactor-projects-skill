@@ -119,7 +119,8 @@ Use the severity given in each entry. Raise it one level only when the entry say
 
 ## How to report
 
-- One finding per anti-pattern per location. When the same anti-pattern appears in many places of one file, make one finding and list the lines (`models.py:28, 47-50, 109-111`).
+- One finding per anti-pattern per file. A location is a file: when the same anti-pattern appears in many places of one file, make one finding and list the lines (`models.py:28, 47-50, 109-111`); when it appears in two files, make two findings.
+- AP-05 and AP-06 overlap. Use AP-05 when the file or class holds the whole application or serves unrelated domains. Use AP-06 when the file belongs to one layer and one domain but does another layer's job. Do not report both for the same file.
 - Give the exact file and line or line range. Confirm the numbers against the file before printing.
 - Order findings from CRITICAL to LOW.
 - A project with partial layers still has to be checked entry by entry. Folder names do not prove that a layer is respected.

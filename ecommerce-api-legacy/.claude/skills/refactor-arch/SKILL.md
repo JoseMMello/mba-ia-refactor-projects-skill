@@ -61,8 +61,10 @@ PHASE 3: REFACTORING COMPLETE
 ## New Project Structure
 <directory tree of the refactored project>
 
+Removed: <old files whose code was moved, or "none">
+
 ## Findings Resolved
-<n> of <n> (list any finding left open, with the reason)
+<n> of <n> (list any finding left open or only partly resolved, with the reason)
 
 ## Validation
   <ok or fail> Application boots without errors
